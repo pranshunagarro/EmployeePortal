@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EmployeePortal.Core.Entities;
+using EmployeePortal.Core.WebServices;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +27,13 @@ namespace EmployeePortal.UWP
         public MainPage()
         {
             this.InitializeComponent();
+            
+
+        }
+
+        private async void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            Employee employee = await AuthenticateServices.Authentication("admin", "admin");
         }
     }
 }

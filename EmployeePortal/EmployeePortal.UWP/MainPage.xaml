@@ -7,7 +7,20 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!--<RowDefinition Height="*"/>-->
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image Width="32" Height="32" Source="Assets/Employee-Portals.png" Margin="0,10,0,0"></Image>
+            <TextBlock Text="Sign In" HorizontalAlignment="Center" FontSize="30px" Margin="0,10,0,0"></TextBlock>
+            <TextBlock Text="Use your Nagarro account" HorizontalAlignment="Center" FontSize="10px" Margin="0,10,0,0"></TextBlock>
+            <TextBox PlaceholderText="Username" Margin="10,70,10,0"></TextBox>
+            <TextBox PlaceholderText="Password" Margin="10,10,10,0"></TextBox>
+            <Button Content="Login" Width="340" Margin="10,10,10,0" Background="#00897B" Click="LoginButton_Click"></Button>
+            <Button Content="Registration" Width="340" Margin="10,10,10,0" Background="#00897B"></Button>
+        </StackPanel>
     </Grid>
 </Page>

@@ -7,11 +7,30 @@ using System.Threading.Tasks;
 
 namespace EmployeePortal.Core.WebServices
 {
-    public class AuthenticateServices
+    public static class AuthenticateServices
     {
-        public Employee Authentication (string userName, string password)
+        public static async Task<Employee> Authentication (string username, string password)
         {
-            return null;
+            await WebServiceSimulator();
+            Employee retVal = null;
+            if (username == "admin" && password == "admin")
+            {
+                retVal = new Employee() { Id = 1, EmployeeCode = 1, FirstName = "Admin", LastName = "" };
+            }
+
+            else
+            {
+                retVal = new Employee() { Id = 2, EmployeeCode = 2, FirstName = "Nagarro", LastName = "User" };
+            }
+            return retVal;
+        }
+
+        private static async Task WebServiceSimulator()
+        {
+           await Task.Run(() =>
+           {
+               Task.Delay(10000);
+           });
         }
     }
 }
